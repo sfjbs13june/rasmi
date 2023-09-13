@@ -9,8 +9,12 @@ import java.util.List;
 
 @RestController
 public class PatientController {
-    @Autowired
+
     private PatientRepo prepo;
+
+    public PatientController(PatientRepo prepo) {
+        this.prepo = prepo;
+    }
 
     @PostMapping("/savePatient")
     public String savePatient(@RequestBody Patient patient)

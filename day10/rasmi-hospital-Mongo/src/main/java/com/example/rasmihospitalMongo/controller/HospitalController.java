@@ -10,10 +10,14 @@ import java.util.List;
 @RestController
 public class HospitalController {
 
-        @Autowired
+
         private HospitalRepo hrepo;
 
-        @PostMapping("/saveHospital")
+    public HospitalController(HospitalRepo hrepo) {
+        this.hrepo = hrepo;
+    }
+
+    @PostMapping("/saveHospital")
         public String saveHospital(@RequestBody Hospital hospital)
         {
             hrepo.save(hospital);
@@ -21,7 +25,7 @@ public class HospitalController {
         }
 
         @GetMapping("/getHospital")
-        public List<Hospital> getHospital(@RequestParam int hId)
+        public List<Hospital> getHospital()
         {
             List<Hospital> h= (List<Hospital>) hrepo.findAll();
             return h;
