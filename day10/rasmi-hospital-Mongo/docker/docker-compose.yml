@@ -1,13 +1,11 @@
 version: '3'
 services:
   mongo-app:
-    image: rasmi007/spring-mongo-app:1.0.0
+    image: rasmi007/rasmi-hospital-Mongo:1.0.0
     ports:
       - "8083:8083"
     environment:
-      spring.data.mongodb.uri: mongodb://mongo:27017/database
-      datasource:
-        driverClassName: com.mongo.cj.jdbc.Driver
+      spring.data.mongodb.uri: mongodb://mongo:27017/data
     depends_on:
       - mongo
     networks:

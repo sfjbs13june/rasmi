@@ -1,11 +1,5 @@
 package com.example.rasmihospitalMongo.module;
 
-import org.springframework.stereotype.Component;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-@Component
 
 public class Hospital {
 

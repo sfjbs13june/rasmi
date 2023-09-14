@@ -10,11 +10,10 @@ import java.util.List;
 @RestController
 public class PatientController {
 
-    private PatientRepo prepo;
+    @Autowired
+    PatientRepo prepo;
 
-    public PatientController(PatientRepo prepo) {
-        this.prepo = prepo;
-    }
+
 
     @PostMapping("/savePatient")
     public String savePatient(@RequestBody Patient patient)
@@ -24,7 +23,7 @@ public class PatientController {
     }
 
     @GetMapping("/getPatient")
-    public List<Patient> getPatient()
+    public List<Patient> getPatient(@RequestParam int pId)
     {
         List<Patient> p= (List<Patient>) prepo.findAll();
         return p;

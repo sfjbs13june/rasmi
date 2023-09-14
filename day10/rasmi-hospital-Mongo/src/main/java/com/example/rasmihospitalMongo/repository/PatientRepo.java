@@ -12,8 +12,5 @@ import java.util.List;
 
 @Repository
 public interface PatientRepo extends MongoRepository<Patient,Integer> {
-    public String savePatient(Patient patient);
-    public List<Patient> getPatient();
-    public Patient updatePatient(Patient patient);
-    public void deletePatient(int pId);
+
 }
