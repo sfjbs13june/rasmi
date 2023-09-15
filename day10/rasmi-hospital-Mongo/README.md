@@ -20,7 +20,7 @@ mvn install dockerfile:build
 ## running docker compose
 
 ``` 
-docker-compose up -d
+docker-compose -f docker-compose-mongo.yml up -d
 
 ```
 
@@ -28,25 +28,24 @@ docker-compose up -d
 ## Post
 
 ``` 
-curl --request POST 'http://localhost:8083/customer/create' --header 'Content-Type: application/json' --data-raw '{"name": "Rama","custId": "1re206","address": "Bangalore"}'
-```
+ curl --request POST 'http://localhost:8083/saveHospital' --header 'Content-Type: application/json' --data-raw '{"hId": 12,"hName": "1re206","address": "Bangalore"}'```
 
 ## Get 
 
 ``` 
-curl -X GET http://localhost:8083/customer/read 
+curl -X GET 'http://localhost:8083/getHospital?hId=12' 
 ```
 
 ## Put
 
 ``` 
-curl -X PUT 'http://localhost:8083/customer/update?custId=1re07&name=Rama' 
+curl -X PUT 'http://localhost:8083/updateHospital?hId=12&hName=Nims&address=Hyd'
 ```
 
 ## Delete
 
 ```
-curl -X DELETE 'http://localhost:8083/customer/delete?name=Rama' 
+curl -X DELETE 'http://localhost:8083/deleteHospital?hId=12' 
 ```
 
 
@@ -55,7 +54,7 @@ curl -X DELETE 'http://localhost:8083/customer/delete?name=Rama'
 ## Show data
 
 ```
-docker exec -it spring-mongo-app-mongo-1 bash
+docker exec -it  rasmi-hospital-mongo-mongo-1 bash
 
 mongo
 
