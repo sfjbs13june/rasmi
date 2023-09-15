@@ -1,11 +1,13 @@
 package com.example.rasmiMysqlHospital.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Patient {
 
+    @GeneratedValue
     @Id
     private int pId;
     private String pName;
