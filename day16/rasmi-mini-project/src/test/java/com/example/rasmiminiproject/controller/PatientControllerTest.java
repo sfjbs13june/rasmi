@@ -44,9 +44,7 @@ public class PatientControllerTest {
         assertEquals("doctor1",result.getDoctorName());
         assertEquals("22/09/2023",result.getDate());
         assertEquals(prescription,result.getPrescription());
-
     }
-
     public void saveAppointmentTest()
     {
         Appointment appointment=new Appointment();

@@ -41,6 +41,8 @@ http://localhost:9090/patient/myappointment?patientName=pat1
 ```
 
 ```
+##Swagger:
+http://localhost:9090/swagger-ui/index.html
 
 
 
