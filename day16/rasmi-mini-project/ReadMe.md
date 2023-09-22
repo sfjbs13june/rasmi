@@ -27,6 +27,8 @@ docker-compose up -d
 
 ## Post
 
+http://localhost:9090/doctor/save
+http://localhost:9090/
 ``` 
 ```
 

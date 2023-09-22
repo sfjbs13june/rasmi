@@ -1,12 +1,15 @@
 package com.example.rasmihospitalmysqltestcases.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+
+
 public class Hospital {
 
-    @Id
+
     private int id;
     private String name;
 
