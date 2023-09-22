@@ -4,8 +4,10 @@ import com.example.rasmiminiproject.model.Appointment;
 import com.example.rasmiminiproject.model.Prescription;
 import com.example.rasmiminiproject.repository.PrescriptionRepository;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
@@ -13,6 +15,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
+@RunWith(MockitoJUnitRunner.class)
 public class PrescriptionControllerTest {
 
     @InjectMocks
