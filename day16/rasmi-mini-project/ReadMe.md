@@ -28,11 +28,13 @@ docker-compose up -d
 ## Post
 
 http://localhost:9090/doctor/save
-http://localhost:9090/
+http://localhost:9090/patient/save
 ``` 
 ```
 
 ## Get
+http://localhost:9090/doctor/doctorappointment?doctorName=doctor1
+http://localhost:9090/patient/myappointment?patientName=pat1
 
 ``` 
 
