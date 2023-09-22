@@ -19,7 +19,7 @@ public class DoctorControllerTest {
     private DoctorController doctorController;
 
 @Mock
-    private AppointmentRepository appointmentRepo;
+    private AppointmentRepository appointmentRepotest;
 
 @Test
     public void saveAppointmentTest()
@@ -37,7 +37,7 @@ prescription.setDoctorName("doctor1");
    appointment.setDate("21/09/2023");
    appointment.setPrescription(prescription);
 
-    when(appointmentRepo.saveAppointment(appointment)).thenReturn(appointment);
+    when(appointmentRepotest.saveAppointment(appointment)).thenReturn(appointment);
     Appointment result= doctorController.saveAppointment(appointment);
     assertEquals("app1",result.getAppointmentId());
     assertEquals("pat1",result.getPatientName());
@@ -52,7 +52,7 @@ prescription.setDoctorName("doctor1");
         Prescription prescription=new Prescription("pre1","app1","fever","pat1","doctor1");
 
         Appointment appointment=new Appointment("app1","pat1","doctor1","21/09/2023",prescription);
-        when(appointmentRepo.findBydoctorName(anyString())).thenReturn(appointment);
+        when(appointmentRepotest.findBydoctorName(anyString())).thenReturn(appointment);
         Appointment result= (Appointment) doctorController.getAppointments("doctor1");
 
         assertEquals("app1",result.getAppointmentId());

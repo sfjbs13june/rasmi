@@ -18,7 +18,7 @@ public class PrescriptionControllerTest {
     private PrescriptionController prescriptionController;
 
     @Mock
-    private PrescriptionRepository prescriptionRepository;
+    private PrescriptionRepository prescriptionRepositorytest;
 
     @Test
     public void savePrescriptionTest()
@@ -29,7 +29,7 @@ public class PrescriptionControllerTest {
         prescription.setDescription("fever");
         prescription.setPatientName("pat1");
         prescription.setDoctorName("doctor1");
-      //  when(prescriptionRepository).saveAppointment(prescription).thenReturn(prescription);
+        when(prescriptionRepositorytest).saveAppointment(prescription).thenReturn(prescription);
         prescriptionController.savePrescription(prescription);
 
 
@@ -46,7 +46,7 @@ public class PrescriptionControllerTest {
         prescription.setDescription("fever");
         prescription.setPatientName("pat1");
         prescription.setDoctorName("doctor1");
-      //  when(prescriptionRepository.getAllPrescriptions(anyString())).thenReturn(prescription);
+      when(prescriptionRepositorytest.getAllPrescriptions(anyString())).thenReturn(prescription);
         prescriptionController.savePrescription(prescription);
     }
     }

@@ -29,8 +29,8 @@ public class PrescriptionController {
     public List<Prescription> getAllPrescriptions(@RequestParam String patientName)
     {
 
-        Prescription prescription= prescriptionrepo.getPatient
-      //  Prescription prescription= prescriptionrepo.findByPatientName(patientName);
+        Prescription prescription= prescriptionrepo.findByPatientName(patientName);
+
         return (List<Prescription>) prescription;
     }
 

@@ -12,7 +12,7 @@ public class PatientControllerTest {
    private PatientController patientController;
 
     @Mock
-    private AppointmentRepository appointmentRepo;
+    private AppointmentRepository appointmentRepotest;
 
     @Test
     public void getMyAppointmentsTest()
