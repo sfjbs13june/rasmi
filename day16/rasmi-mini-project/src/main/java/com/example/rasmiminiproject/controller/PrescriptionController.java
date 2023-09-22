@@ -10,8 +10,15 @@ import java.util.List;
 @RestController
 public class PrescriptionController {
 
+    private final PrescriptionRepository prescriptionrepo;
+
     @Autowired
-    PrescriptionRepository prescriptionrepo;
+    public PrescriptionController(PrescriptionRepository prescriptionrepo1) {
+        this.prescriptionrepo = prescriptionrepo1;
+    }
+
+
+
     @PostMapping("/saveprescription")
     public Prescription savePrescription(@RequestBody Prescription prescription)
     {
@@ -21,7 +28,9 @@ public class PrescriptionController {
     @GetMapping("/viewprescription")
     public List<Prescription> getAllPrescriptions(@RequestParam String patientName)
     {
-        Prescription prescription=prescriptionrepo.findByPatientName(patientName);
+
+        Prescription prescription= prescriptionrepo.getPatient
+      //  Prescription prescription= prescriptionrepo.findByPatientName(patientName);
         return (List<Prescription>) prescription;
     }
 

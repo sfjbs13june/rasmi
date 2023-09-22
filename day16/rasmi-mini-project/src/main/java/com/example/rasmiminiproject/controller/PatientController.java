@@ -12,8 +12,15 @@ import java.util.List;
 @RequestMapping("/patient")
 public class PatientController {
 
+    private final AppointmentRepository appointmentrepo;
+
     @Autowired
-    AppointmentRepository appointmentrepo;
+    public PatientController(AppointmentRepository appointmentrepo) {
+        this.appointmentrepo = appointmentrepo;
+    }
+
+
+
 
     @PostMapping("/save")
     public Appointment saveAppointment(@RequestBody Appointment appointment)

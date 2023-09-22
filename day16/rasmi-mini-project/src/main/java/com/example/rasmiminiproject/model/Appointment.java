@@ -4,6 +4,7 @@ package com.example.rasmiminiproject.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class Appointment {
 
@@ -21,6 +22,8 @@ public class Appointment {
         this.date = date;
         this.prescription = prescription;
     }
+
+
 
     public String getAppointmentId() {
         return appointmentId;
@@ -62,6 +65,6 @@ public class Appointment {
         this.prescription = prescription;
     }
 
-    public Appointment() {
+    public Appointment(String id1, String pat1, String doctor1, String s) {
     }
 }

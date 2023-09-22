@@ -4,9 +4,11 @@ package com.example.rasmiminiproject.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.processing.Generated;
+
 @Component
 public class Prescription {
-    @Id
+        @Id
     String prescriptionId;
     String appointmentId;
     String description;
