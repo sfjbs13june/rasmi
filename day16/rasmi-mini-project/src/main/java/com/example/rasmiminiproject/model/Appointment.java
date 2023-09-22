@@ -23,6 +23,9 @@ public class Appointment {
         this.prescription = prescription;
     }
 
+    public Appointment() {
+
+    }
 
 
     public String getAppointmentId() {

@@ -13,16 +13,7 @@ import java.util.List;
 public class PatientController {
     @Autowired
     private AppointmentRepository appointmentrepo;
-
-   /* @Autowired
-    public PatientController(AppointmentRepository appointmentrepo) {
-        this.appointmentrepo = appointmentrepo;
-    }
-*/
-
-
-
-    @PostMapping("/save")
+        @PostMapping("/save")
     public Appointment saveAppointment(@RequestBody Appointment appointment)
     {
         return appointmentrepo.save(appointment);

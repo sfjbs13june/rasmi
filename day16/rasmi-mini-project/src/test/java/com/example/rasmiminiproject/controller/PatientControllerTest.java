@@ -27,12 +27,27 @@ public class PatientControllerTest {
         appointment.setAppointmentId("app1");
         appointment.setDoctorName("doctor1");
         appointment.setDate("22/09/2023");
+        when(appointmentRepotest.getAppointment("doctor1")).thenReturn(appointment);
+        Appointment result= (Appointment) patientController.getMyAppointments("pat1");
+        assertEquals("app1",result.getAppointmentId());
+        assertEquals("doctor1",result.getDoctorName());
+        assertEquals("22/09/2023",result.getDate());
+
+    }
+
+    public void saveAppointment()
+    {
+        Appointment appointment=new Appointment();
+        appointment.setAppointmentId("app1");
+        appointment.setDoctorName("doctor1");
+        appointment.setDate("22/09/2023");
         when(appointmentRepotest.save(appointment)).thenReturn(appointment);
         Appointment result=patientController.saveAppointment(appointment);
         assertEquals("id1",result.getAppointmentId());
         assertEquals("app1",result.getDoctorName());
         assertEquals("22/09/2023",result.getDate());
-
     }
+
+
 
 }
