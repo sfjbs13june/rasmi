@@ -10,13 +10,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
-
-    private final AppointmentRepository appointmentrepo;
     @Autowired
-    public DoctorController(AppointmentRepository appointmentrepo) {
+    private AppointmentRepository appointmentrepo;
+
+    /*
+    @Autowired
+   public DoctorController(AppointmentRepository appointmentrepo) {
         this.appointmentrepo = appointmentrepo;
     }
-
+*/
 
 
     @PostMapping("/save")

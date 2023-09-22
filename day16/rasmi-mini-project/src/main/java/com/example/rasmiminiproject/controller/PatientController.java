@@ -11,14 +11,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/patient")
 public class PatientController {
-
-    private final AppointmentRepository appointmentrepo;
-
     @Autowired
+    private AppointmentRepository appointmentrepo;
+
+   /* @Autowired
     public PatientController(AppointmentRepository appointmentrepo) {
         this.appointmentrepo = appointmentrepo;
     }
-
+*/
 
 
 

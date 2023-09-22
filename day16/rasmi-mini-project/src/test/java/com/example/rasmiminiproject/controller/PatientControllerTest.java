@@ -23,16 +23,5 @@ public class PatientControllerTest {
 
 
     }
-    /*
-     @Test
-    public void getPatientTest(){
-        Patient patient= new Patient("id1","pat01","hospital01","dis01");
-        when(dataRepository.getPatient(anyString())).thenReturn(patient);
-        Patient result= patientController.getPatient("pat01");
 
-        assertEquals("id1",result.getId());
-        assertEquals("pat01",result.getName());
-        assertEquals("hospital01",result.getHospital());
-        assertEquals("dis01",result.getDisease());
-     */
 }

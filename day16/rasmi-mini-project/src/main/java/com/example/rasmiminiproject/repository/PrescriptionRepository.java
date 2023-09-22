@@ -8,9 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public interface PrescriptionRepository extends MongoRepository<Prescription,String> {
-    Prescription findByPatientName(String patientName);
 
+    public Prescription findByPatientName(String patientName);
 
-    Prescription getAllPrescriptions(String prescription);
-    Prescription saveAppointment(String prescription);
+    public Prescription save(String prescription);
 }
