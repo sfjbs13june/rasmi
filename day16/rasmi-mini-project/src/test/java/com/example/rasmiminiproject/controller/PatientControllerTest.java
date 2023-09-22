@@ -26,21 +26,38 @@ public class PatientControllerTest {
     @Test
     public void getMyAppointmentsTest()
     {
+        Prescription prescription=new Prescription();
+        prescription.setPrescriptionId("id1");
+        prescription.setAppointmentId("app1");
+        prescription.setDescription("fever");
+        prescription.setPatientName("pat1");
+        prescription.setDoctorName("doctor1");
+
         Appointment appointment=new Appointment();
         appointment.setAppointmentId("app1");
         appointment.setDoctorName("doctor1");
         appointment.setDate("22/09/2023");
+        appointment.setPrescription(prescription);
         when(appointmentRepotest.getAppointment("doctor1")).thenReturn(appointment);
         Appointment result= (Appointment) patientController.getMyAppointments("pat1");
         assertEquals("app1",result.getAppointmentId());
         assertEquals("doctor1",result.getDoctorName());
         assertEquals("22/09/2023",result.getDate());
+        assertEquals(prescription,result.getPrescription());
 
     }
 
-    public void saveAppointment()
+    public void saveAppointmentTest()
     {
         Appointment appointment=new Appointment();
+        Prescription prescription=new Prescription();
+        prescription.setPrescriptionId("id1");
+        prescription.setAppointmentId("app1");
+        prescription.setDescription("fever");
+        prescription.setPatientName("pat1");
+        prescription.setDoctorName("doctor1");
+        appointment.setPrescription(prescription);
+
         appointment.setAppointmentId("app1");
         appointment.setDoctorName("doctor1");
         appointment.setDate("22/09/2023");
@@ -49,6 +66,8 @@ public class PatientControllerTest {
         assertEquals("id1",result.getAppointmentId());
         assertEquals("app1",result.getDoctorName());
         assertEquals("22/09/2023",result.getDate());
+        assertEquals(prescription,result.getPrescription());
+
     }
 
 

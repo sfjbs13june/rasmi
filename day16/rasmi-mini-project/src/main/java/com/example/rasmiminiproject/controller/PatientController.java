@@ -13,28 +13,17 @@ import java.util.List;
 public class PatientController {
     @Autowired
     private AppointmentRepository appointmentrepo;
-        @PostMapping("/save")
-    public Appointment saveAppointment(@RequestBody Appointment appointment)
-    {
+
+    @PostMapping("/save")
+    public Appointment saveAppointment(@RequestBody Appointment appointment) {
         return appointmentrepo.save(appointment);
     }
 
-        @GetMapping("/myappointment")
-    public List<Appointment> getMyAppointments(@RequestParam String patientName)
-        {
-            Appointment app=appointmentrepo.findByPatientName(patientName);
-            return (List<Appointment>) app;
-        }
-
-
-
-
-    /*
-
-
-    @PostMapping("/save")
-    public Appointment saveAppointment(@RequestBody Appointment appointment){
-
+    @GetMapping("/myappointment")
+    public List<Appointment> getMyAppointments(@RequestParam String patientName) {
+        Appointment app = appointmentrepo.findByPatientName(patientName);
+        return (List<Appointment>) app;
     }
-     */
+
+
 }
